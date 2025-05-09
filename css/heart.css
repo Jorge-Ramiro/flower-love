@@ -1,0 +1,96 @@
+body {
+  margin: 0%;
+  background-color: aqua;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  background-color: beige;
+  width: 50%;
+  height: 50%;
+}
+
+.dedication {
+  background-color: blueviolet;
+  width: 50%;
+  height: 25%;
+  padding: .25%;
+}
+
+.maquina {
+  font-family: monospace;
+  white-space: pre;
+  position: relative;
+  font-size: 1.75em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: parpadeo 0.8s infinite steps(1);
+  color: black;
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.counter-style {
+  font-family: sans-serif;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.unid {
+  opacity: 1;
+  transform: translateY(0);
+  padding-right: .3em;
+}
+
+.animada {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: aparecer 0.6s forwards;
+}
+
+.number {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+.texto-animado {
+  font-size: 2em;
+  display: inline-block;
+  /*Para que las letras estén en línea*/
+  background-color: beige;
+}
+
+.letra {
+  display: inline-block;
+  /*Para que las letras estén en línea*/
+  opacity: 0;
+  /*Inicialmente invisibles*/
+  animation: aparecer 1.5s ease-in-out forwards;
+  /*Animación con duración, tipo de transición y que permanezcan*/
+}
+
+/* Definición de la animación */
+@keyframes aparecer {
+  100% {
+    opacity: 1;
+    /*Al final de la animación, se vuelven visibles*/
+    transform: translateY(0);
+  }
+}
