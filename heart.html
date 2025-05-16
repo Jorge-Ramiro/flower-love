@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="language" content="es-ES">
+    <meta name="title" content="title">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/heart.css">
-    <title>Heart Tree</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jscex.min.js"></script>
+    <script type="text/javascript" src="js/jscex-parser.js"></script>
+    <script type="text/javascript" src="js/jscex-jit.js"></script>
+    <script type="text/javascript" src="js/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="js/jscex-async.min.js"></script>
+    <script type="text/javascript" src="js/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="js/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/animations.js" charset="utf-8"></script>
+    <title>HEART TREE</title>
 </head>
+
 <body>
-    <div class="main"></div>
-    <div class="texto-animado" id="animado"></div>
-    <div>Aqui es donde se mostraran la letra de las cancion</div>
-    <div class="dedication">
-        <div id="typeWriter" class="maquina"></div>
-        <div id="dayCounter" class="counter-style"></div>
+    <div id="main">
+        <div id="error">
+            Tu navegador que estás usando no es compatible con el contenido que se va a mostrar.
+            Por favor, usa Google (<a
+                href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)
+            o Firefox (<a href="http://firefox.com.cn/download/">Firefox</a>)~
+        </div>
+
+        <div id="wrap">
+            <div id="text">
+                <div id="code">
+                    <span class="say">Para el amor de mi vida:</span><br><br>
+                    <span class="say">Si pudiera elegir un lugar seguro, sería a tu lado.</span><br>
+                    <span class="say">Cuanto más tiempo estoy contigo más te amo.</span><br>
+                    <span class="say"><span class="space"></span> — I Love You!</span>
+                </div>
+            </div>
+            <div id="clock-box">
+                <a target="_blank">Mi amor</a>
+                <a target="_blank">por ti</a> comenzó hace...
+                <div id="clock"></div>
+            </div>
+
+            <canvas id="canvas" width="1100" height="680"></canvas>
+        </div>
     </div>
+
+    <audio id="song" src="sound/I_Wont_Give_Up.mp3" preload="auto"></audio>
+    <script src="js/main.js"></script>
 </body>
-<script  src="HeartAnim.js"></script>
+
 </html>
