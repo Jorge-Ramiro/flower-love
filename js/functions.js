@@ -83,3 +83,37 @@ function timeElapse(date) {
         "<span class=\"digit\">" + seconds + "</span> segundos";
     $("#clock").html(result);
 }
+
+function typeLine(text) {
+    return new Promise(resolve => {
+        let i = 0;
+        const interval = setInterval(() => {
+            $("#code").text(text.substring(0, i) + (i < text.length ? "_" : ""));
+            i++;
+            if (i > text.length) {
+                clearInterval(interval);
+                setTimeout(resolve, 300); // Pausa después de cada línea
+            }
+        }, 50); // velocidad de tipeo
+    });
+}
+
+async function syncLyrics(audio, lyrics) {
+    let currentIndex = 0;
+
+    function checkLyrics() {
+        if (currentIndex >= lyrics.length) return;
+        const currentTime = audio.currentTime;
+        if (currentTime >= lyrics[currentIndex].time) {
+            typeLine(lyrics[currentIndex].text);
+            currentIndex++;
+        }
+    }
+
+    const interval = setInterval(() => {
+        checkLyrics();
+        if (currentIndex >= lyrics.length) {
+            clearInterval(interval);
+        }
+    }, 300); // comprobamos cada 300ms
+}

@@ -136,10 +136,6 @@
         var done = false;
 
         /*$("#code").show().typewriter();*/
-        // Poner la animación con callback que marca done = true
-        $("#code").show().typewriter(function () {
-            done = true;
-        });
 
         $("#clock-box").fadeIn(500);
         timeElapse(together);
@@ -147,15 +143,52 @@
             timeElapse(together);
         }, 1000);
 
+        // Poner la animación con callback que marca done = true
+        $("#code").show().typewriter(function () {
+            done = true;
+        });
         // Esperar hasta que done sea true
         while (!done) {
             $await(Jscex.Async.sleep(50));
         }
+
+        // Letra de la canción
+        lyrics = [
+            {
+                text: "¿Cuánto tiempo te amaré?, Mientras las estrellas estén por encima de ti y más si puedo.",
+                time: 16.0
+            },
+            { text: "¿Cuánto tiempo te necesitaré?", time: 30.54 },
+            { text: "Siempre y cuando las estaciones necesitan, Siga su plan.", time: 34.56 },
+            { text: "¿Cuánto tiempo estaré contigo?", time: 45.44 },
+            { text: "Mientras el mar esté obligado a", time: 49.36 },
+            { text: "Lavar sobre la arena", time: 55.00 },
+            { text: "¿Cuánto tiempo te querré?", time: 60.50 },
+            { text: "Siempre y cuando quieras que lo haga", time: 64.20 },
+            { text: "Y más largo de lejos.", time: 69.48 },
+            { text: "¿Cuánto tiempo te sostengo?", time: 74.92 },
+            { text: "Mientras tu padre te lo dijera", time: 78.82 },
+            { text: "Siempre y cuando puedas.", time: 84.26 },
+            { text: "¿Cuánto tiempo te daré?", time: 89.34 },
+            { text: "Mientras viva a través de ti", time: 93.52 },
+            { text: "Sin importar el tiempo que digas.", time: 98.0 },
+            { text: "¿Cuánto tiempo te amaré?", time: 104.0 },
+            { text: "Mientras las estrellas estén por encima de ti", time: 108.0 },
+            { text: "Y más si me permite.", time: 113.0 },
+            { text: "¿Cuánto tiempo te amaré?", time: 162.0 }
+        ];
+
         // Reproducir la musica
         var audio = document.getElementById("song");
         if (audio) {
             audio.play();
         }
+
+        // Borrar dedicatoria para dar paso a las letras
+        $("#code").text("");
+
+        // Iniciar sincronización
+        syncLyrics(audio, lyrics);
 
     }));
 
@@ -172,3 +205,18 @@
 
     runAsync().start();
 })();
+
+window.addEventListener("load", function () {
+    const audio = document.getElementById("song");
+    if (audio) {
+        audio.addEventListener("ended", async function () {
+            $("#code").text("");
+            // Crear nuevo <span class="say"> para el texto final
+            var $container = $("#code");
+            var $newSay = $('<span class="say"></span>');
+            $container.append($newSay);
+            $newSay.html(`Pase lo que pase...<br>Te quedarás en mi corazón<br>Ya tatuaste tu nombre en mi pecho.`);
+            $newSay.typewriter();
+        });
+    }
+});
