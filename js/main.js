@@ -154,28 +154,24 @@
 
         // Letra de la canción
         lyrics = [
-            {
-                text: "¿Cuánto tiempo te amaré?, Mientras las estrellas estén por encima de ti y más si puedo.",
-                time: 16.0
-            },
-            { text: "¿Cuánto tiempo te necesitaré?", time: 30.54 },
-            { text: "Siempre y cuando las estaciones necesitan, Siga su plan.", time: 34.56 },
-            { text: "¿Cuánto tiempo estaré contigo?", time: 45.44 },
-            { text: "Mientras el mar esté obligado a", time: 49.36 },
-            { text: "Lavar sobre la arena", time: 55.00 },
-            { text: "¿Cuánto tiempo te querré?", time: 60.50 },
-            { text: "Siempre y cuando quieras que lo haga", time: 64.20 },
-            { text: "Y más largo de lejos.", time: 69.48 },
-            { text: "¿Cuánto tiempo te sostengo?", time: 74.92 },
-            { text: "Mientras tu padre te lo dijera", time: 78.82 },
-            { text: "Siempre y cuando puedas.", time: 84.26 },
-            { text: "¿Cuánto tiempo te daré?", time: 89.34 },
-            { text: "Mientras viva a través de ti", time: 93.52 },
-            { text: "Sin importar el tiempo que digas.", time: 98.0 },
-            { text: "¿Cuánto tiempo te amaré?", time: 104.0 },
-            { text: "Mientras las estrellas estén por encima de ti", time: 108.0 },
-            { text: "Y más si me permite.", time: 113.0 },
-            { text: "¿Cuánto tiempo te amaré?", time: 162.0 }
+            { text: "Sé que no soy una persona perfecta, hay tantas cosas que ojalá nunca hubiera hecho", time: 0.0 },
+            { text: "Pero sigo aprendiendo Yo nunca quise hacerte esas cosas", time: 25.0 },
+            { text: "Entonces, tengo que decirte antes de irme Que solo quiero que sepas", time: 37.0 },
+            { text: "Yo encontré la razón para mi Para cambiar lo que solía ser", time: 48.0 },
+            { text: "Una razón para comenzar de nuevo La razón eres tú", time: 60.0 },
+            { text: "Perdón por lastimarte Es algo con lo que tengo que vivir a diario", time: 71.0 },
+            { text: "Aquel dolor que te hice sentir Desearía poder quitártelo", time: 83.0 },
+            { text: "Y ser el que atrapa todas tus lágrimas Por eso necesito que escuches", time: 95.0 },
+            { text: "Yo encontré la razón para mi Para cambiar lo que solía ser", time: 106.0 },
+            { text: "Una razón para comenzar de nuevo La razón eres tú", time: 118.0 },
+            { text: "La razón eres tú La razón eres tú", time: 130.0 },
+            { text: "La razón eres tú", time: 142.0 },
+            { text: "No soy una persona perfecta Yo nunca quise hacerte esas cosas", time: 148.0 },
+            { text: "Entonces, tengo que decirte antes de irme Que solo quiero que sepa", time: 164.0 },
+            { text: "Yo encontré la razón para mi Para cambiar lo que solía ser", time: 175.0 },
+            { text: "Una razón para comenzar de nuevo La razón eres tú", time: 187.0 },
+            { text: "Yo encontré la razón para mostrar AUn lado de mí que no conoces", time: 199.0 },
+            { text: "Una razón para todo que hago Y la razón eres tú", time: 210.0 }
         ];
 
         // Reproducir la musica
@@ -213,6 +209,7 @@ window.addEventListener("load", function () {
             $("#code").text("");
             // Crear nuevo <span class="say"> para el texto final
             var $container = $("#code");
+            $container.css("font-size", "26px");
             var $newSay = $('<span class="say"></span>');
             $container.append($newSay);
             $newSay.html(`Pase lo que pase...<br>Te quedarás en mi corazón<br>Ya tatuaste tu nombre en mi pecho.`);

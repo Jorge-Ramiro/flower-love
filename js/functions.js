@@ -86,6 +86,8 @@ function timeElapse(date) {
 
 function typeLine(text) {
     return new Promise(resolve => {
+        // Cambia el tamaño de fuente antes de comenzar a escribir
+        $("#code").css("font-size", "26px"); // Ajusta el tamaño a lo que quieras
         let i = 0;
         const interval = setInterval(() => {
             $("#code").text(text.substring(0, i) + (i < text.length ? "_" : ""));
